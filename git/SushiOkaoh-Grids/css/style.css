@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+.container-grid{
+    display: grid;
+  column-gap: 50px;
+  grid-template-columns: auto;
+    padding: 10px;
+    height: 100%;
+    
+}
+.header{
+    background: url("./../img/SushiOkaohLogo.jpg");
+    height: 190px;
+    width: 190px;
+    background-size: cover;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+.container{
+
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    justify-content: center;
+}
+

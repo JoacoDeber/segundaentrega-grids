@@ -1,0 +1,143 @@
+body {
+    margin: 0 !important;
+    color: white !important;
+}
+
+/* GRID */
+/* ---------------------------------------------------------------------------------------------------------- */
+.grid {
+    display: grid;
+    grid-template-areas:
+        'snapbar contenido ';
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(50px, 70px) 1fr;
+    gap: 20px;
+    padding: 10px;
+    height: 100vh;
+    background: url('../img/FONDO.jpg');
+    background-size: 100% 100%;
+}
+
+.snapbar {
+    grid-area: snapbar;
+    display: grid;
+    grid-template-areas:
+        'navegacion ';
+    grid-template-rows: 1fr;
+
+}
+
+.contenido {
+    grid-area: contenido;
+    display: grid;
+    grid-template-areas:
+        'contenido-titulo contenido-titulo '
+        'contenido-mapa contenido-logo '
+        'contenido-mapa contenido-direccion '
+        'contenido-fin contenido-fin ';
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+    gap: 20px;
+    height: 100vh;
+}
+
+.contenido-titulo {
+    grid-area: contenido-titulo;
+    display: flex;
+    align-items: center;
+    font-size: 4vw;
+}
+
+.contenido-mapa {
+    grid-area: contenido-mapa;
+    background: url('../img/mapa.JPG');
+    background-size: 100% 100%;
+    width: 100%;
+    border: 3px solid #ffa602;
+    border-radius: 4px;
+}
+
+.contenido-logo {
+    grid-area: contenido-logo;
+}
+
+.contenido-direccion {
+    grid-area: contenido-direccion;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.contenido-fin {
+    grid-area: contenido-fin;
+}
+
+/* CLASES */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+.header-image {
+    background: url("./../img/SushiOkaohLogo.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    width: 100%;
+    aspect-ratio: auto 1/1;
+}
+
+.navegacion {
+    grid-area: navegacion;
+    border-radius: 18px;
+    padding: 10px 0;
+    text-align: center;
+    background: black;
+    color: white;
+    box-shadow: 0 0 20px 2px #00000085;
+    border: 1px solid white;
+    display: grid;
+}
+
+.navegacion-li {
+    /* padding: 20px 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seleccionado {
+    background-color: rgb(255 255 255);
+    color: white;
+}
+
+.iconpp {
+    /* padding: 50px 20px; */
+    color: bisque;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* MEDiA */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 601px) {
+    
+}
+
+@media only screen and (max-width: 800px) {
+    .contenido {
+        grid-template-areas:
+        'contenido-titulo'
+        'contenido-direccion '
+        'contenido-mapa '
+        'contenido-fin';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 5fr 1fr;
+    }
+
+    .contenido-logo {
+        display: none;
+    }
+   
+}

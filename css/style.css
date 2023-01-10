@@ -1,0 +1,160 @@
+body {
+    margin: 0 !important;
+    color: white !important;
+}
+
+/* GRID */
+/* ---------------------------------------------------------------------------------------------------------- */
+.grid-p {
+    display: grid;
+    grid-template-areas:
+        'proximamente';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 10px;
+    height: 100vh;
+    background: url('../img/FONDO.jpg');
+    background-size: 100% 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas:
+        'titulo titulo '
+        'contenido  publicidad'
+        'fin fin ';
+    grid-template-rows: minmax(50px, 1fr) 6fr minmax(50px, 1fr);
+    grid-template-columns: 5fr minmax(150px, 200px);
+    gap: 5px;
+    padding: 10px;
+    height: 100vh;
+    background: url('../img/FONDO.jpg');
+    background-size: 100% 100%;
+}
+
+.titulo {
+    /* background: red; */
+    grid-area: titulo;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.contenido {
+    /* background: blue; */
+    grid-area: contenido;
+    display: grid;
+    grid-template-areas:
+        'a contenido-titulo '
+        'a contenido-descripcion '
+        'a contenido-botonera ';
+    grid-template-rows: minmax(50px, 1fr) 4fr minmax(50px, 1fr);
+    grid-template-columns:1fr;
+    gap: 5px;
+    padding: 10px;
+}
+
+.publicidad {
+    grid-area: publicidad;
+    background: url('../img/publicidad.jpg');
+    background-size: 100% 100%;
+}
+
+.publicidad-horizontal {
+    grid-area: publicidad;
+    background: url('../img/publicidad-horizontal.jpg');
+    background-size: 100% 100%;
+}
+
+.fin {
+    /* background: black; */
+    grid-area: fin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contenido-titulo {
+    grid-area: contenido-titulo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 20px black;
+}
+
+.contenido-descripcion {
+    grid-area: contenido-descripcion;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 20%; */
+    text-shadow: 0 0 20px black;
+}
+
+.contenido-botonera {
+    grid-area: contenido-botonera;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CLASES */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+.header-image {
+    background: url("./../img/SushiOkaohLogo.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    height: 100%;
+    aspect-ratio: auto 1/1;
+}
+
+.contenido-boton {
+    margin: 0 5px;
+    font-size: 2rem !important;
+}
+
+.contenido-boton a {
+    color: white !important;
+}
+
+.proximamente {
+    grid-area: proximamente;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: auto;
+    font-size: 7.5vw;
+}
+
+/* MEDiA */
+/* ---------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 601px) {
+    .publicidad-horizontal {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .publicidad {
+        display: none;
+    }
+
+    .grid {
+        grid-template-areas:
+            'titulo'
+            'publicidad'
+            'contenido'
+            'fin';
+        grid-template-rows: minmax(50px, 1fr) minmax(100px, 1fr) 5fr minmax(50px, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .contenido {
+        grid-template-columns: 1fr;
+    }
+}
